@@ -28,8 +28,8 @@ function App() {
 
   return (
     <div>
-      <h1>Transformers.js</h1>
-      <h2>ML-powered multilingual translation in React!</h2>
+      
+      <h1>ML-powered multilingual translation in React on the browser (<i>no cost</i>)!</h1>
 
       <div className='container'>
         <div className='language-container'>
