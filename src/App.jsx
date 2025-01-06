@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import LanguageSelector from './components/LanguageSelector';
 import { useTranslation } from '@codethicket/react-ai-translator';
+import Progress from './components/Progress';
 
 import './App.css'
 
@@ -45,6 +46,18 @@ function App() {
       <button disabled={modelLoading||loading} onClick={()=>translate(input,
       sourceLanguage,
       targetLanguage)}>Translate</button>
+
+<div className='progress-bars-container'>
+{loading && (
+          <label>{`Loading models... (happens only once, please be patient :))`}</label>
+        )}
+      
+        {progress.map(data => (
+          <div key={data.file}>
+            <Progress text={data.file} percentage={data.progress} />
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
