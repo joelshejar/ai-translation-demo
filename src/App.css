@@ -1,69 +1,170 @@
+/* App.css */
+
+/* Root container */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+}
+button{
+  background-color: #fff;
+}
+
+/* Main container card */
+.container {
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
 }
 
 .language-container {
   display: flex;
-  gap: 20px;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
+/* Language selectors */
+.language-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.language-selector > select {
+  width: 150px;
+  padding: 8px;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.language-selector > select:hover {
+  border-color: #b6bec5;
+}
+
+/* Textbox section */
 .textbox-container {
   display: flex;
   justify-content: center;
   gap: 20px;
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.textbox-container>textarea, .language-selector {
-  width: 50%;
+.textbox-container > textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 1rem;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 1rem;
+  transition: border 0.2s ease;
 }
 
-.language-selector>select {
-  width: 150px;
+.textbox-container > textarea:focus {
+  border-color: #007bff;
 }
 
+/* Output text container */
+.textbox-container > div {
+  width: 100%;
+  min-height: 120px;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow: auto;
+  border: 1px solid #d0d7de;
+}
+
+/* Translate button */
+.translate-button {
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 12px 24px;
+  cursor: pointer;
+  margin-top: 1rem;
+  background: #0056b3;
+  color: #fff;
+}
+
+.translate-button:hover {
+  background: #0056b3;
+  color: #fff;
+}
+
+.translate-button:disabled {
+  background: #c5c5c5;
+  cursor: not-allowed;
+}
+
+/* Progress bars container */
+.progress-bars-container {
+  padding: 8px;
+  min-height: 140px;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+/* Progress container */
 .progress-container {
   position: relative;
   font-size: 14px;
-  color: white;
   background-color: #e9ecef;
-  border: solid 1px;
   border-radius: 8px;
   text-align: left;
   overflow: hidden;
+  height: 24px;
+  margin-bottom: 10px;
 }
 
 .progress-bar {
-  padding: 0 4px;
-  z-index: 0;
+  position: absolute;
   top: 0;
-  width: 1%;
+  left: 0;
   height: 100%;
-  overflow: hidden;
-  background-color: #007bff;
-  white-space: nowrap;
+  width: 1%;
+  background: linear-gradient(to right, #34d399, #059669);
+  transition: width 0.4s ease;
 }
 
 .progress-text {
+  position: relative;
   z-index: 2;
+  padding-left: 8px;
+  line-height: 24px;
+  color: #333;
 }
 
+/* Misc. selectors container */
 .selector-container {
   display: flex;
   gap: 20px;
-}
-
-.progress-bars-container {
-  padding: 8px;
-  height: 140px;
-}
-
-.container {
-  margin: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1rem;
 }

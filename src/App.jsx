@@ -43,7 +43,7 @@ function App() {
         </div>
       </div>
 
-      <button disabled={modelLoading||loading} onClick={()=>translate(input,
+      <button className='translate-button' disabled={modelLoading||loading} onClick={()=>translate(input,
       sourceLanguage,
       targetLanguage)}>Translate</button>
 
